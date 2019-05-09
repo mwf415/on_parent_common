@@ -17,17 +17,19 @@ import javax.servlet.ServletRequest;
 
 import javax.servlet.ServletResponse;
 
+import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.lang.StringUtils;
 
 import cn.onlov.cms.common.core.web.util.URLHelper;
 
+@WebFilter(urlPatterns={"*.jhtml","*.html","*.jspx","*.jsp"}, filterName="xssFilter")
 public class XssFilter implements Filter {
 	private String excludeUrls;
 	FilterConfig filterConfig = null;
 	public void init(FilterConfig filterConfig) throws ServletException {
-		this.excludeUrls=filterConfig.getInitParameter("excludeUrls");
+		this.excludeUrls="/member@/flow_statistic@/api/content/save@/api/content/update@/api/template/save@/api/template/update@/api/resource/save@/api/resource/update@/api/keyword/save@/api/keyword/update";
 		this.filterConfig = filterConfig;
 	}
 

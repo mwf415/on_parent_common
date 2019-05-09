@@ -15,7 +15,7 @@ import freemarker.template.TemplateModel;
 /**
  * HTML文本提取并截断
  * 
- * 需要拦截器cn.onlov.on_cms_common.common.web.ProcessTimeFilter支持
+ * 需要拦截器cn.onlov.cms.common.common.web.ProcessTimeFilter支持
  */
 public class HtmlCutDirective implements TemplateDirectiveModel {
 	public static final String PARAM_S = "s";

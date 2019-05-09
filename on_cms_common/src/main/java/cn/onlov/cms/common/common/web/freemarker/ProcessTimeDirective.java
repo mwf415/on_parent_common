@@ -20,7 +20,7 @@ import freemarker.template.TemplateNumberModel;
 /**
  * 执行时间标签
  * 
- * 需要拦截器cn.onlov.on_cms_common.common.web.ProcessTimeFilter支持
+ * 需要拦截器cn.onlov.cms.common.common.web.ProcessTimeFilter支持
  */
 public class ProcessTimeDirective implements TemplateDirectiveModel {
 	private static final Logger log = LoggerFactory
