@@ -8,6 +8,7 @@ import cn.onlov.cms.common.cms.web.MemberApiInterceptor;
 import cn.onlov.cms.common.common.util.PropertyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -21,8 +22,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @author tom
  * @date 2017年11月17日
  */
+
 @Configuration
 @EnableWebMvc
+@Component("corsConfigurerAdapter")
 //WebMvcConfigurationSupport
 public class MemberCorsConfigurerAdapter extends  WebMvcConfigurerAdapter {
 	private static final String cross_prefix="Cross.domain";

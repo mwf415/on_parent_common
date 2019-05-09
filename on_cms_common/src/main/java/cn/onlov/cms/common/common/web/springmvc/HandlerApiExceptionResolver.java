@@ -12,6 +12,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.TypeMismatchException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.BadSqlGrammarException;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
@@ -20,6 +21,7 @@ import org.springframework.web.servlet.ModelAndView;
 /**
  * @author Tom
  */
+@Component()
 public class HandlerApiExceptionResolver  implements org.springframework.web.servlet.HandlerExceptionResolver {
 	private static final Logger log = LoggerFactory.getLogger(HandlerApiExceptionResolver.class);
 	public ModelAndView resolveException(HttpServletRequest request,
