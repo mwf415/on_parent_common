@@ -1,18 +1,13 @@
 package cn.onlov.cms.common.common.web;
 
-import java.io.IOException;
-
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletRequest;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 
 /**
  * 执行时间过滤器
@@ -20,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 
 @WebFilter(urlPatterns={"*.do","*.jhtml","*.htm","*.jspx","*.jsp"}, filterName="processTimeFilter")
-
+@Component
 public class ProcessTimeFilter implements Filter {
 	protected final Logger log = LoggerFactory
 			.getLogger(ProcessTimeFilter.class);

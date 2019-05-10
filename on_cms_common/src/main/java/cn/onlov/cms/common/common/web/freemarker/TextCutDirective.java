@@ -1,22 +1,24 @@
 package cn.onlov.cms.common.common.web.freemarker;
 
-import java.io.IOException;
-import java.io.Writer;
-import java.util.Map;
-
 import cn.onlov.cms.common.common.util.StrUtils;
-
 import freemarker.core.Environment;
 import freemarker.template.TemplateDirectiveBody;
 import freemarker.template.TemplateDirectiveModel;
 import freemarker.template.TemplateException;
 import freemarker.template.TemplateModel;
+import org.springframework.stereotype.Component;
+
+import java.io.IOException;
+import java.io.Writer;
+import java.util.Map;
 
 /**
  * 文本字符串截断
  * 
  * 需要拦截器cn.onlov.cms.common.common.web.ProcessTimeFilter支持
  */
+
+@Component("text_cut")
 public class TextCutDirective implements TemplateDirectiveModel {
 	public static final String PARAM_S = "s";
 	public static final String PARAM_LEN = "len";

@@ -1,27 +1,23 @@
 package cn.onlov.cms.common.common.web.freemarker;
 
+import cn.onlov.cms.common.common.web.ProcessTimeFilter;
+import freemarker.core.Environment;
+import freemarker.template.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
 import java.io.IOException;
 import java.io.Writer;
 import java.text.DecimalFormat;
 import java.util.Map;
-
-import cn.onlov.cms.common.common.web.ProcessTimeFilter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import freemarker.core.Environment;
-import freemarker.template.TemplateDirectiveBody;
-import freemarker.template.TemplateDirectiveModel;
-import freemarker.template.TemplateException;
-import freemarker.template.TemplateModel;
-import freemarker.template.TemplateModelException;
-import freemarker.template.TemplateNumberModel;
 
 /**
  * 执行时间标签
  * 
  * 需要拦截器cn.onlov.cms.common.common.web.ProcessTimeFilter支持
  */
+@Component("process_time")
 public class ProcessTimeDirective implements TemplateDirectiveModel {
 	private static final Logger log = LoggerFactory
 			.getLogger(ProcessTimeDirective.class);

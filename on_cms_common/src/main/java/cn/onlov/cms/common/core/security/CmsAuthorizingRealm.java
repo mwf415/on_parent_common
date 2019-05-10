@@ -1,16 +1,13 @@
 package cn.onlov.cms.common.core.security;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import cn.onlov.cms.common.cms.web.CmsThreadVariable;
+import cn.onlov.cms.common.core.entity.CmsSite;
+import cn.onlov.cms.common.core.entity.CmsUser;
+import cn.onlov.cms.common.core.entity.UnifiedUser;
 import cn.onlov.cms.common.core.manager.CmsUserMng;
 import cn.onlov.cms.common.core.manager.UnifiedUserMng;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
-import org.apache.shiro.authc.UsernamePasswordToken;
+import cn.onlov.cms.common.core.web.util.CmsUtils;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
@@ -18,16 +15,16 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.SimplePrincipalCollection;
 import org.apache.shiro.util.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-import cn.onlov.cms.common.core.entity.CmsSite;
-import cn.onlov.cms.common.core.entity.CmsUser;
-import cn.onlov.cms.common.core.entity.UnifiedUser;
-import cn.onlov.cms.common.core.web.util.CmsUtils;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * 自定义DB Realm
  * 
  */
+@Component
 public class CmsAuthorizingRealm extends AuthorizingRealm {
 
 	/**

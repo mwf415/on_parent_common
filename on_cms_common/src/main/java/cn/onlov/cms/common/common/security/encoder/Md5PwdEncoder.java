@@ -1,14 +1,16 @@
 package cn.onlov.cms.common.common.security.encoder;
 
+import org.apache.commons.codec.binary.Hex;
+import org.springframework.stereotype.Component;
+
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-import org.apache.commons.codec.binary.Hex;
-
 /**
  * MD5密码加密
  */
+@Component("pwdEncoder")
 public class Md5PwdEncoder implements PwdEncoder {
 	public String encodePassword(String rawPass) {
 		return encodePassword(rawPass, defaultSalt);

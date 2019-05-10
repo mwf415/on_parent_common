@@ -1,18 +1,20 @@
 package cn.onlov.cms.common.common.image;
 
-import java.awt.Color;
-import java.io.File;
-
 import magick.Magick;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
+import java.awt.*;
+import java.io.File;
 
 /**
  * 图片缩小类
  * 
  * 根据环境情况选择java图片缩小方式或专业的magick图片缩小方式
  */
+@Component("imageScale")
+
 public class ImageScaleImpl implements ImageScale {
 	private static final Logger log = LoggerFactory
 			.getLogger(ImageScaleImpl.class);

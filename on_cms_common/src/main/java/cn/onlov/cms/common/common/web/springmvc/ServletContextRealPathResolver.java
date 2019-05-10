@@ -1,12 +1,12 @@
 package cn.onlov.cms.common.common.web.springmvc;
 
-import javax.servlet.ServletContext;
-
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.ServletContextAware;
 
-@Component
+import javax.servlet.ServletContext;
+
+@Component("realPathResolver")
 public class ServletContextRealPathResolver implements RealPathResolver,
 		ServletContextAware {
 	public String get(String path) {

@@ -27,6 +27,7 @@ import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
@@ -48,6 +49,7 @@ import java.util.*;
  * 
  * @author tom HandlerInterceptorAdapter
  */
+@Component
 @Slf4j
 public class AdminApiInterceptor extends HandlerInterceptorAdapter implements InitializingBean, DisposableBean {
 	public static final String SITE_PARAM = "_site_id_param";
@@ -69,7 +71,8 @@ public class AdminApiInterceptor extends HandlerInterceptorAdapter implements In
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		// 正常状态
-		String uri = getURI(request);
+//		String uri = getURI(request);
+		String uri = "/user/getPerms";
 		String body = "\"\"";
 		String message = Constants.API_STATUS_FAIL;
 		WebErrors errors = WebErrors.create(request);

@@ -1,20 +1,15 @@
 package cn.onlov.cms.common.common.web;
 
-import java.io.IOException;
-
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.annotation.WebFilter;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import cn.onlov.cms.common.common.util.StrUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * 资源过滤器
@@ -23,6 +18,7 @@ import org.slf4j.LoggerFactory;
  * 
  */
 @WebFilter(urlPatterns="/wenku/*", filterName="resourceFilter")
+@Component
 public class ResourceFilter implements Filter {
 	protected final Logger log = LoggerFactory
 			.getLogger(ResourceFilter.class);

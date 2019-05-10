@@ -1,19 +1,21 @@
 package cn.onlov.cms.common.common.upload;
 
-import java.io.File;
-import java.io.IOException;
-
-import javax.servlet.ServletContext;
-
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.ServletContext;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * 本地文件存储
  */
+@Component("fileRepository")
+
 public class FileRepository implements ServletContextAware {
 	private Logger log = LoggerFactory.getLogger(FileRepository.class);
 

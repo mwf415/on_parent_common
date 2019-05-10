@@ -1,24 +1,25 @@
 package cn.onlov.cms.common.common.web;
 
-import java.io.IOException;
-
 import net.sf.ehcache.CacheException;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.ObjectExistsException;
 import net.sf.ehcache.config.Configuration;
 import net.sf.ehcache.config.ConfigurationFactory;
 import net.sf.ehcache.config.DiskStoreConfiguration;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.Resource;
+import org.springframework.stereotype.Component;
+
+import java.io.IOException;
 
 /**
  * 用于Web的EhCacheManagerFacotryBean。可以基于Web根目录指定diskStore地址。
  */
+@Component("cacheManager")
 public class WebEhCacheManagerFacotryBean implements FactoryBean<CacheManager>,
 		InitializingBean, DisposableBean {
 
@@ -109,6 +110,8 @@ public class WebEhCacheManagerFacotryBean implements FactoryBean<CacheManager>,
 
 	public void destroy() {
 		log.info("Shutting down EHCache CacheManager");
-		this.cacheManager.shutdown();
+		if(this.cacheManager!=null){
+			this.cacheManager.shutdown();
+		}
 	}
 }

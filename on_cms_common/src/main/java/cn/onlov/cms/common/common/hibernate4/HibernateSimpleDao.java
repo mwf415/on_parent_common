@@ -1,16 +1,5 @@
 package cn.onlov.cms.common.common.hibernate4;
 
-import java.io.Serializable;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.SQLIntegrityConstraintViolationException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
 import cn.onlov.cms.common.common.page.Pagination;
 import cn.onlov.cms.common.common.util.MyBeanUtils;
 import org.hibernate.Criteria;
@@ -29,14 +18,15 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.support.DataAccessUtils;
-import org.springframework.jdbc.core.ColumnMapRowMapper;
-import org.springframework.jdbc.core.ResultSetExtractor;
-import org.springframework.jdbc.core.RowMapper;
-import org.springframework.jdbc.core.RowMapperResultSetExtractor;
-import org.springframework.jdbc.core.SingleColumnRowMapper;
-import org.springframework.jdbc.core.SqlParameterValue;
-import org.springframework.jdbc.core.StatementCreatorUtils;
+import org.springframework.jdbc.core.*;
 import org.springframework.util.Assert;
+
+import java.io.Serializable;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 /**
  * hibernate DAO基类
@@ -565,6 +555,7 @@ public abstract class HibernateSimpleDao {
 
 	@Autowired
 	public void setSessionFactory(SessionFactory sessionFactory) {
+
 		this.sessionFactory = sessionFactory;
 	}
 

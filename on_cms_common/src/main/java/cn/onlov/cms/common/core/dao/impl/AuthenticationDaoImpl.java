@@ -1,13 +1,13 @@
 package cn.onlov.cms.common.core.dao.impl;
 
-import java.util.Date;
-
 import cn.onlov.cms.common.common.hibernate4.HibernateBaseDao;
 import cn.onlov.cms.common.common.page.Pagination;
-import cn.onlov.cms.common.core.entity.Authentication;
 import cn.onlov.cms.common.core.dao.AuthenticationDao;
+import cn.onlov.cms.common.core.entity.Authentication;
 import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;
+
+import java.util.Date;
 
 @Repository
 public class AuthenticationDaoImpl extends

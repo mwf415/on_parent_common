@@ -1,5 +1,9 @@
 package cn.onlov.cms.common.common.ipseek;
 
+import cn.onlov.cms.common.common.web.springmvc.RealPathResolver;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -7,10 +11,7 @@ import java.io.RandomAccessFile;
 import java.util.HashMap;
 import java.util.Map;
 
-
-import cn.onlov.cms.common.common.web.springmvc.RealPathResolver;
-import org.springframework.beans.factory.annotation.Autowired;
-
+@Component("ipSeeker")
 public class IPSeekerImpl implements IPSeeker{
 	// 用来做为cache，查询一个ip时首先查看cache，以减少不必要的重复查找
 	private Map<String, IPLocation> ipCache;
@@ -22,8 +23,8 @@ public class IPSeekerImpl implements IPSeeker{
 	private IPLocation loc;
 	private byte[] b4;
 	private byte[] b3;
-	private String dir;
-	private String filename;
+	private String dir="/ipseek";
+	private String filename="QQWry.Dat";
 
 	public void init(){
 		String file = realPathResolver.get(dir) + File.separator + filename;

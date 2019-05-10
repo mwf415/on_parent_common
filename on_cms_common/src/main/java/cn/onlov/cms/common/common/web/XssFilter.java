@@ -3,34 +3,22 @@ package cn.onlov.cms.common.common.web;
 /**
  * @author Tom
  */
-import java.io.IOException;
+import cn.onlov.cms.common.core.web.util.URLHelper;
+import org.apache.commons.lang.StringUtils;
+import org.springframework.stereotype.Component;
 
-import javax.servlet.Filter;
-
-import javax.servlet.FilterChain;
-
-import javax.servlet.FilterConfig;
-
-import javax.servlet.ServletException;
-
-import javax.servlet.ServletRequest;
-
-import javax.servlet.ServletResponse;
-
+import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
-
-import org.apache.commons.lang.StringUtils;
-
-import cn.onlov.cms.common.core.web.util.URLHelper;
+import java.io.IOException;
 
 @WebFilter(urlPatterns={"*.jhtml","*.html","*.jspx","*.jsp"}, filterName="xssFilter")
+@Component
 public class XssFilter implements Filter {
-	private String excludeUrls;
+	private String excludeUrls ="/member@/flow_statistic@/api/content/save@/api/content/update@/api/template/save@/api/template/update@/api/resource/save@/api/resource/update@/api/keyword/save@/api/keyword/update";
 	FilterConfig filterConfig = null;
 	public void init(FilterConfig filterConfig) throws ServletException {
-		this.excludeUrls="/member@/flow_statistic@/api/content/save@/api/content/update@/api/template/save@/api/template/update@/api/resource/save@/api/resource/update@/api/keyword/save@/api/keyword/update";
-		this.filterConfig = filterConfig;
+		this.excludeUrls=excludeUrls;
 	}
 
 	public void destroy() {

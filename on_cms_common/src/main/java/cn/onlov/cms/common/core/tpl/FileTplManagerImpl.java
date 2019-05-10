@@ -1,19 +1,21 @@
 package cn.onlov.cms.common.core.tpl;
 
-import java.io.File;
-import java.io.FileFilter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
 import cn.onlov.cms.common.common.web.Constants;
 import cn.onlov.cms.common.common.web.springmvc.RealPathResolver;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.io.FileFilter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+@Component("tplManager")
 public class FileTplManagerImpl implements TplManager {
 	private static Logger log = LoggerFactory
 			.getLogger(FileTplManagerImpl.class);
