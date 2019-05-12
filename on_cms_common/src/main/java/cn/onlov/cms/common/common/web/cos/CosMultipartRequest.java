@@ -270,10 +270,10 @@ public class CosMultipartRequest {
   }
 
   /**
-   * Constructor with an old signature, kept for backward compatibility.
+   * Constructor with an config signature, kept for backward compatibility.
    * Without this constructor, a servlet compiled against a previous version 
    * of this class (pre 1.4) would have to be recompiled to link with this 
-   * version.  This constructor supports the linking via the old signature.
+   * version.  This constructor supports the linking via the config signature.
    * Callers must simply be careful to pass in an HttpServletRequest.
    * 
    */
@@ -283,10 +283,10 @@ public class CosMultipartRequest {
   }
 
   /**
-   * Constructor with an old signature, kept for backward compatibility.
+   * Constructor with an config signature, kept for backward compatibility.
    * Without this constructor, a servlet compiled against a previous version 
    * of this class (pre 1.4) would have to be recompiled to link with this 
-   * version.  This constructor supports the linking via the old signature.
+   * version.  This constructor supports the linking via the config signature.
    * Callers must simply be careful to pass in an HttpServletRequest.
    * 
    */

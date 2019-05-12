@@ -61,7 +61,7 @@ import javax.servlet.http.HttpServletRequest;
  *                           and content-disposition after content-type,
  *                           thanks to Scott Stark
  * @version 1.2, 2001/01/22, getFilePath() support thanks to Stefan Eissing
- * @version 1.1, 2000/10/29, integrating old WebSphere fix
+ * @version 1.1, 2000/10/29, integrating config WebSphere fix
  * @version 1.0, 2000/10/27, initial revision
  */
 public class MultipartParser {

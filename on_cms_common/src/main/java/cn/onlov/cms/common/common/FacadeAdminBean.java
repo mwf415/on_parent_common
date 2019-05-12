@@ -15,49 +15,49 @@ import javax.annotation.Resource;
 @Component
 public class FacadeAdminBean {
 
-    @Resource
-    private AdminApiInterceptor adminApiInterceptor;
-
-    @Bean
-    public ReloadableResourceBundleMessageSource messageSource(){
-
-        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setCacheSeconds(0);
-        messageSource.setBasenames("/WEB-INF/languages/jeecms/adminapi/messages");
-        return messageSource;
-    }
-
-    @Bean
-    public CommonsMultipartResolver  multipartResolver(){
-        return new CommonsMultipartResolver();
-    }
-
-    @Bean
-    public RequestMappingHandlerAdapter requestMappingHandlerAdapter(){
-        RequestMappingHandlerAdapter adapter= new RequestMappingHandlerAdapter();
-        adapter.setWebBindingInitializer(new BindingInitializer());
-        return adapter;
-
-    }
-
-    @Bean
-    public RequestMappingHandlerMapping requestMappingHandlerMapping(){
-        RequestMappingHandlerMapping mapping = new RequestMappingHandlerMapping();
-
-
-        mapping.setInterceptors(adminApiInterceptor);
-        return mapping;
-    }
-
-
-    @Bean
-    public CookieLocaleResolver localeResolver (){
-        CookieLocaleResolver resolver = new CookieLocaleResolver();
-        resolver.setCookieName("clientlanguage");
-        resolver.setCookieMaxAge(-1);
-        return resolver;
-
-    }
+//    @Resource
+//    private AdminApiInterceptor adminApiInterceptor;
+//
+//    @Bean
+//    public ReloadableResourceBundleMessageSource messageSource(){
+//
+//        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+//        messageSource.setCacheSeconds(0);
+//        messageSource.setBasenames("/WEB-INF/languages/jeecms/adminapi/messages");
+//        return messageSource;
+//    }
+//
+//    @Bean
+//    public CommonsMultipartResolver  multipartResolver(){
+//        return new CommonsMultipartResolver();
+//    }
+//
+//    @Bean
+//    public RequestMappingHandlerAdapter requestMappingHandlerAdapter(){
+//        RequestMappingHandlerAdapter adapter= new RequestMappingHandlerAdapter();
+//        adapter.setWebBindingInitializer(new BindingInitializer());
+//        return adapter;
+//
+//    }
+//
+//    @Bean
+//    public RequestMappingHandlerMapping requestMappingHandlerMapping(){
+//        RequestMappingHandlerMapping mapping = new RequestMappingHandlerMapping();
+//
+//
+//        mapping.setInterceptors(adminApiInterceptor);
+//        return mapping;
+//    }
+//
+//
+//    @Bean
+//    public CookieLocaleResolver localeResolver (){
+//        CookieLocaleResolver resolver = new CookieLocaleResolver();
+//        resolver.setCookieName("clientlanguage");
+//        resolver.setCookieMaxAge(-1);
+//        return resolver;
+//
+//    }
 
 
 

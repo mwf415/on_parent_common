@@ -137,7 +137,7 @@ import java.util.Vector;
  *  Released as 1.7.</li>
  *  <li><strong>2006-02-23</strong> Removed Flash helper methods which weren't used elsewhere.
  *   Updated skip method which tries "read" whenever "skip(Bytes)" returns a result of 0.
- *   The old method didn't work with certain input stream types on truncated data streams.
+ *   The config method didn't work with certain input stream types on truncated data streams.
  *   Thanks to Martin Leidig for reporting this and sending in code.
  *   Released as 1.8.</li>
  *  </li>

@@ -34,6 +34,7 @@ import org.apache.commons.logging.LogFactory;
 import org.hibernate.cache.CacheException;
 import org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory;
 import org.hibernate.cfg.Settings;
+import org.springframework.stereotype.Component;
 
 
 /**
@@ -44,6 +45,7 @@ import org.hibernate.cfg.Settings;
  * @author Emmanuel Bernard
  * @author Alex Snaps
  */
+//@Component(value = "singletonEhCacheRegionFactory")
 public class WebSingletonEhCacheRegionFactory extends SingletonEhCacheRegionFactory {
 	/*
 	private static final WebSingletonEhCacheRegionFactory LOG = Logger.getMessageLogger(

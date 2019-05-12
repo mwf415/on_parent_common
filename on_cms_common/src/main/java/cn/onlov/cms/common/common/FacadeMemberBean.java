@@ -10,28 +10,28 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 @Component
 public class FacadeMemberBean {
 
-    @Bean
-    public ReloadableResourceBundleMessageSource messageSource(){
-        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setCacheSeconds(10);
-        messageSource.setBasenames("/WEB-INF/languages/jeecms/adminapi/messages");
-        return messageSource;
-    }
-
-    @Bean
-    public CommonsMultipartResolver multipartResolver(){
-        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
-        return commonsMultipartResolver;
-
-    }
-
-    @Bean
-    public RequestMappingHandlerAdapter requestMappingHandlerAdapter (){
-        RequestMappingHandlerAdapter requestMappingHandlerAdapter = new RequestMappingHandlerAdapter();
-        requestMappingHandlerAdapter.setWebBindingInitializer(new BindingInitializer());
-        return requestMappingHandlerAdapter;
-    }
-
+//    @Bean
+//    public ReloadableResourceBundleMessageSource messageSource(){
+//        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
+//        messageSource.setCacheSeconds(10);
+//        messageSource.setBasenames("/WEB-INF/languages/jeecms/adminapi/messages");
+//        return messageSource;
+//    }
+//
+//    @Bean
+//    public CommonsMultipartResolver multipartResolver(){
+//        CommonsMultipartResolver commonsMultipartResolver = new CommonsMultipartResolver();
+//        return commonsMultipartResolver;
+//
+//    }
+//
+//    @Bean
+//    public RequestMappingHandlerAdapter requestMappingHandlerAdapter (){
+//        RequestMappingHandlerAdapter requestMappingHandlerAdapter = new RequestMappingHandlerAdapter();
+//        requestMappingHandlerAdapter.setWebBindingInitializer(new BindingInitializer());
+//        return requestMappingHandlerAdapter;
+//    }
+//
 
 
 }
